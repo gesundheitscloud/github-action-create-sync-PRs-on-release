@@ -2,5 +2,8 @@
   "repository": {
     "owner": { "login": "Glumli" },
     "name": "waddup"
+  },
+  "release": {
+    "tag_name": "What a name!"
   }
 }

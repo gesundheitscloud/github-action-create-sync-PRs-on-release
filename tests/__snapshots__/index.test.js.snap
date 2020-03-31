@@ -1,169 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create-update-PR-in-forks creates a new issue 1`] = `
-Object {
-  "assignees": Array [],
-  "body": "Goodbye!",
-  "labels": Array [],
-  "title": "Hello!",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue 2`] = `
+exports[`create-update-PR-in-forks creates a new PR 1`] = `
 Array [
-  Array [
-    "Created issue Hello!#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue from a different template 1`] = `
-Object {
-  "assignees": Array [],
-  "body": "Goodbye!",
-  "labels": Array [],
-  "title": "Different file",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue from a different template 2`] = `
-Array [
-  Array [
-    "Created issue Different file#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with a milestone passed by input 1`] = `
-Object {
-  "assignees": Array [
-    "octocat",
-    "Glumli",
-  ],
-  "body": "Goodbye!",
-  "labels": Array [],
-  "milestone": 1,
-  "title": "Hello!",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with an assignee passed by input 1`] = `
-Object {
-  "assignees": Array [
-    "octocat",
-  ],
-  "body": "Goodbye!",
-  "labels": Array [],
-  "title": "Hello!",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with an assignee passed by input 2`] = `
-Array [
-  Array [
-    "Created issue Hello!#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with assignees and labels as comma-delimited strings 1`] = `
-Object {
-  "assignees": Array [
-    "Glumli",
-    "matchai",
-  ],
-  "body": "The action create-update-PR-in-forks is the best action.",
-  "labels": Array [
-    "bug",
-    "enhancement",
-  ],
-  "title": "DO EVERYTHING",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with assignees and labels as comma-delimited strings 2`] = `
-Array [
-  Array [
-    "Created issue DO EVERYTHING#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with assignees, labels and a milestone 1`] = `
-Object {
-  "assignees": Array [
-    "Glumli",
-  ],
-  "body": "The action create-update-PR-in-forks is the best action.",
-  "labels": Array [
-    "bugs",
-  ],
-  "milestone": 2,
-  "title": "DO EVERYTHING",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with assignees, labels and a milestone 2`] = `
-Array [
-  Array [
-    "Created issue DO EVERYTHING#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with multiple assignees passed by input 1`] = `
-Object {
-  "assignees": Array [
-    "octocat",
-    "Glumli",
-  ],
-  "body": "Goodbye!",
-  "labels": Array [],
-  "title": "Hello!",
-}
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with multiple assignees passed by input 2`] = `
-Array [
-  Array [
-    "Created issue Hello!#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks creates a new issue with some template variables 1`] = `
-Array [
-  Array [
-    "Created issue Hello create-update-PR-in-forks#1: www",
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks logs a helpful error if creating an issue throws an error 1`] = `
-Array [
-  Array [
-    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
-  ],
-  Array [
-    [HttpError: Validation error],
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks logs a helpful error if creating an issue throws an error with more errors 1`] = `
-Array [
-  Array [
-    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
-  ],
-  Array [
-    [HttpError: Validation error: {"foo":true}],
-  ],
   Array [
     Array [
-      Object {
-        "foo": true,
-      },
+      Promise {},
     ],
+  ],
+]
+`;
+
+exports[`create-update-PR-in-forks creates a new PR from a different template 1`] = `
+Array [
+  Array [
+    Array [
+      Promise {},
+    ],
+  ],
+]
+`;
+
+exports[`create-update-PR-in-forks creates a new PR with labels as comma-delimited strings 1`] = `undefined`;
+
+exports[`create-update-PR-in-forks creates a new PR with labels as comma-delimited strings 2`] = `
+Array [
+  Array [
+    Array [
+      Promise {},
+    ],
+  ],
+]
+`;
+
+exports[`create-update-PR-in-forks creates a new PR with some template variables 1`] = `
+Array [
+  Array [
+    Array [
+      Promise {},
+    ],
+  ],
+]
+`;
+
+exports[`create-update-PR-in-forks logs a helpful error if creating a PR throws an error 1`] = `
+Array [
+  Array [
+    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
+  ],
+  Array [
+    [HttpError: request to https://api.github.com/repos/Glumli/waddup/forks failed, reason: Nock: No match for request {
+  "method": "GET",
+  "url": "https://api.github.com/repos/Glumli/waddup/forks",
+  "headers": {
+    "accept": [
+      "application/vnd.github.v3+json"
+    ],
+    "user-agent": [
+      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
+    ],
+    "authorization": [
+      "token undefined"
+    ],
+    "accept-encoding": [
+      "gzip,deflate"
+    ],
+    "connection": [
+      "close"
+    ]
+  }
+}],
+  ],
+  Array [
+    [HttpError: request to https://api.github.com/repos/Glumli/waddup/git/refs failed, reason: Nock: No match for request {
+  "method": "POST",
+  "url": "https://api.github.com/repos/Glumli/waddup/git/refs",
+  "headers": {
+    "accept": [
+      "application/vnd.github.v3+json"
+    ],
+    "user-agent": [
+      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
+    ],
+    "authorization": [
+      "token undefined"
+    ],
+    "content-type": [
+      "application/json; charset=utf-8"
+    ],
+    "content-length": [
+      "51"
+    ],
+    "accept-encoding": [
+      "gzip,deflate"
+    ],
+    "connection": [
+      "close"
+    ]
+  },
+  "body": "{\\"ref\\":\\"refs/heads/What a name!\\",\\"sha\\":\\"I'm a sha\\"}"
+}],
+  ],
+  Array [
+    "Somethings wrong with creating the PRs forks",
+  ],
+  Array [
+    [TypeError: Cannot read property 'map' of undefined],
+  ],
+]
+`;
+
+exports[`create-update-PR-in-forks logs a helpful error if creating a PR throws an error with more errors 1`] = `
+Array [
+  Array [
+    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
+  ],
+  Array [
+    [HttpError: request to https://api.github.com/repos/Glumli/waddup/forks failed, reason: Nock: No match for request {
+  "method": "GET",
+  "url": "https://api.github.com/repos/Glumli/waddup/forks",
+  "headers": {
+    "accept": [
+      "application/vnd.github.v3+json"
+    ],
+    "user-agent": [
+      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
+    ],
+    "authorization": [
+      "token undefined"
+    ],
+    "accept-encoding": [
+      "gzip,deflate"
+    ],
+    "connection": [
+      "close"
+    ]
+  }
+}],
+  ],
+  Array [
+    [HttpError: request to https://api.github.com/repos/Glumli/waddup/git/refs failed, reason: Nock: No match for request {
+  "method": "POST",
+  "url": "https://api.github.com/repos/Glumli/waddup/git/refs",
+  "headers": {
+    "accept": [
+      "application/vnd.github.v3+json"
+    ],
+    "user-agent": [
+      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
+    ],
+    "authorization": [
+      "token undefined"
+    ],
+    "content-type": [
+      "application/json; charset=utf-8"
+    ],
+    "content-length": [
+      "51"
+    ],
+    "accept-encoding": [
+      "gzip,deflate"
+    ],
+    "connection": [
+      "close"
+    ]
+  },
+  "body": "{\\"ref\\":\\"refs/heads/What a name!\\",\\"sha\\":\\"I'm a sha\\"}"
+}],
+  ],
+  Array [
+    "Somethings wrong with creating the PRs forks",
+  ],
+  Array [
+    [TypeError: Cannot read property 'map' of undefined],
   ],
 ]
 `;
