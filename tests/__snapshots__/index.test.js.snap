@@ -4,7 +4,14 @@ exports[`create-update-PR-in-forks creates a new PR 1`] = `
 Array [
   Array [
     Array [
-      Promise {},
+      Object {
+        "data": Object {},
+        "headers": Object {
+          "content-type": "application/json",
+        },
+        "status": 200,
+        "url": "https://api.github.com/repos/Glumli/repository_name/pulls",
+      },
     ],
   ],
 ]
@@ -14,7 +21,14 @@ exports[`create-update-PR-in-forks creates a new PR from a different template 1`
 Array [
   Array [
     Array [
-      Promise {},
+      Object {
+        "data": Object {},
+        "headers": Object {
+          "content-type": "application/json",
+        },
+        "status": 200,
+        "url": "https://api.github.com/repos/Glumli/repository_name/pulls",
+      },
     ],
   ],
 ]
@@ -26,7 +40,14 @@ exports[`create-update-PR-in-forks creates a new PR with labels as comma-delimit
 Array [
   Array [
     Array [
-      Promise {},
+      Object {
+        "data": Object {},
+        "headers": Object {
+          "content-type": "application/json",
+        },
+        "status": 200,
+        "url": "https://api.github.com/repos/Glumli/repository_name/pulls",
+      },
     ],
   ],
 ]
@@ -36,142 +57,15 @@ exports[`create-update-PR-in-forks creates a new PR with some template variables
 Array [
   Array [
     Array [
-      Promise {},
+      Object {
+        "data": Object {},
+        "headers": Object {
+          "content-type": "application/json",
+        },
+        "status": 200,
+        "url": "https://api.github.com/repos/Glumli/repository_name/pulls",
+      },
     ],
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks logs a helpful error if creating a PR throws an error 1`] = `
-Array [
-  Array [
-    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
-  ],
-  Array [
-    [HttpError: request to https://api.github.com/repos/Glumli/waddup/forks failed, reason: Nock: No match for request {
-  "method": "GET",
-  "url": "https://api.github.com/repos/Glumli/waddup/forks",
-  "headers": {
-    "accept": [
-      "application/vnd.github.v3+json"
-    ],
-    "user-agent": [
-      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
-    ],
-    "authorization": [
-      "token undefined"
-    ],
-    "accept-encoding": [
-      "gzip,deflate"
-    ],
-    "connection": [
-      "close"
-    ]
-  }
-}],
-  ],
-  Array [
-    [HttpError: request to https://api.github.com/repos/Glumli/waddup/git/refs failed, reason: Nock: No match for request {
-  "method": "POST",
-  "url": "https://api.github.com/repos/Glumli/waddup/git/refs",
-  "headers": {
-    "accept": [
-      "application/vnd.github.v3+json"
-    ],
-    "user-agent": [
-      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
-    ],
-    "authorization": [
-      "token undefined"
-    ],
-    "content-type": [
-      "application/json; charset=utf-8"
-    ],
-    "content-length": [
-      "51"
-    ],
-    "accept-encoding": [
-      "gzip,deflate"
-    ],
-    "connection": [
-      "close"
-    ]
-  },
-  "body": "{\\"ref\\":\\"refs/heads/What a name!\\",\\"sha\\":\\"I'm a sha\\"}"
-}],
-  ],
-  Array [
-    "Somethings wrong with creating the PRs forks",
-  ],
-  Array [
-    [TypeError: Cannot read property 'map' of undefined],
-  ],
-]
-`;
-
-exports[`create-update-PR-in-forks logs a helpful error if creating a PR throws an error with more errors 1`] = `
-Array [
-  Array [
-    "An error occurred while creating the issue. This might be caused by a malformed issue title, or a typo in the labels or assignees. Check .github/ISSUE_TEMPLATE.md!",
-  ],
-  Array [
-    [HttpError: request to https://api.github.com/repos/Glumli/waddup/forks failed, reason: Nock: No match for request {
-  "method": "GET",
-  "url": "https://api.github.com/repos/Glumli/waddup/forks",
-  "headers": {
-    "accept": [
-      "application/vnd.github.v3+json"
-    ],
-    "user-agent": [
-      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
-    ],
-    "authorization": [
-      "token undefined"
-    ],
-    "accept-encoding": [
-      "gzip,deflate"
-    ],
-    "connection": [
-      "close"
-    ]
-  }
-}],
-  ],
-  Array [
-    [HttpError: request to https://api.github.com/repos/Glumli/waddup/git/refs failed, reason: Nock: No match for request {
-  "method": "POST",
-  "url": "https://api.github.com/repos/Glumli/waddup/git/refs",
-  "headers": {
-    "accept": [
-      "application/vnd.github.v3+json"
-    ],
-    "user-agent": [
-      "octokit.js/16.43.1 Node.js/12.8.0 (macOS Mojave; x64)"
-    ],
-    "authorization": [
-      "token undefined"
-    ],
-    "content-type": [
-      "application/json; charset=utf-8"
-    ],
-    "content-length": [
-      "51"
-    ],
-    "accept-encoding": [
-      "gzip,deflate"
-    ],
-    "connection": [
-      "close"
-    ]
-  },
-  "body": "{\\"ref\\":\\"refs/heads/What a name!\\",\\"sha\\":\\"I'm a sha\\"}"
-}],
-  ],
-  Array [
-    "Somethings wrong with creating the PRs forks",
-  ],
-  Array [
-    [TypeError: Cannot read property 'map' of undefined],
   ],
 ]
 `;
