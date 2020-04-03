@@ -74,7 +74,7 @@ Toolkit.run(async tools => {
 
   let pullRequests
   try {
-    pullRequests = await forkRepos.map((repo) => {
+    pullRequests = await Promise.all(forkRepos.map((repo) => {
       const payload = {
         ...templated,
         ...repo,
@@ -82,7 +82,7 @@ Toolkit.run(async tools => {
         head: `${tools.context.repo.owner}:${tagName}`
       }
       return tools.github.pulls.create(payload)
-    })
+    }))
   } catch (error) {
     const errorMessage = 'Somethings wrong with creating the PRs forks'
     tools.log.error(errorMessage)
