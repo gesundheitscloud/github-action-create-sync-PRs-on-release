@@ -4,11 +4,6 @@ const fm = require('front-matter')
 const nunjucks = require('nunjucks')
 const dateFilter = require('nunjucks-date-filter')
 
-function listToArray (list) {
-  if (!list) return []
-  return Array.isArray(list) ? list : list.split(', ')
-}
-
 function repoStringToObject (repoString) {
   const repoArray = repoString.split('/')
   return { owner: repoArray[0], repo: repoArray[1] }
@@ -16,7 +11,6 @@ function repoStringToObject (repoString) {
 
 Toolkit.run(async tools => {
   const template = tools.inputs.filename || '.github/ISSUE_TEMPLATE.md'
-  const assignees = tools.inputs.assignees
   const env = nunjucks.configure({ autoescape: false })
   env.addFilter('date', dateFilter)
 
@@ -70,7 +64,7 @@ Toolkit.run(async tools => {
     const payload = {
       ...repository,
       ref: `refs/heads/${tagName}`,
-      sha,
+      sha
     }
     await tools.github.git.createRef(payload)
   } catch (error) {
@@ -78,24 +72,24 @@ Toolkit.run(async tools => {
     tools.exit.failure()
   }
 
-  forkRepos.forEach(async (repo) => {
-    try {
+  let pullRequests
+  try {
+    pullRequests = await Promise.all(forkRepos.map((repo) => {
       const payload = {
         ...templated,
         ...repo,
         base: 'master',
-        head: `${tools.context.repo.owner}:${tagName}`,
+        head: `${tools.context.repo.owner}:${tagName}`
       }
-      const pullRequest = await tools.github.pulls.create(payload)
-      tools.log.success(pullRequest)
-    } catch (error) {
-      const errorMessage = `Somethings wrong with creating the PR to ${repo.owner}'s fork`
-      tools.log.error(errorMessage)
-      tools.log.error(error)
-
-      tools.exit.failure()
-    }
-  })
+      return tools.github.pulls.create(payload)
+    }))
+  } catch (error) {
+    const errorMessage = 'Somethings wrong with creating the PRs forks'
+    tools.log.error(errorMessage)
+    tools.log.error(error)
+    tools.exit.failure()
+  }
+  tools.log.success(pullRequests)
 }, {
   secrets: ['GITHUB_TOKEN']
 })
