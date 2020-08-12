@@ -92,7 +92,7 @@ Toolkit.run(async tools => {
       const errorMessage = `Somethings wrong with creating the PR to ${repo.owner}'s fork`
       tools.log.error(errorMessage)
       tools.log.error(error)
-      // TODO remove?
+
       tools.exit.failure()
     }
   })
